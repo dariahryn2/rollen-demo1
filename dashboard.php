@@ -16,7 +16,7 @@ $username = $_SESSION['username'];
 $role = $_SESSION['role'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $role === 'medewerker') {
-    // Save new work hours into session (simulation)
+    // Nieuwe werkuren opslaan in sessie
     $new_entry = [
         'user' => $username,
         'date' => $_POST['date'],
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $role === 'medewerker') {
     $_SESSION['logged_hours'][] = $new_entry;
 }
 
-// Combine hardcoded + session-stored hours
+// Combineert hardgecodeerde + sessie-opgeslagen uren
 $all_hours = $worked_hours;
 
 if (isset($_SESSION['logged_hours'])) {
