@@ -7,9 +7,9 @@ if (!isset($_SESSION['loggedin'])) {
 }
 
 $worked_hours = [
-    ['user' => 'daria', 'date' => '2024-05-01', 'hours' => 8, 'description' => 'Userstory'],
-    ['user' => 'daria', 'date' => '2024-05-02', 'hours' => 6, 'description' => 'Project A'],
-    ['user' => 'jan',   'date' => '2024-05-01', 'hours' => 9, 'description' => 'Userstory 2'],
+    ['user' => 'daria', 'date' => '2024-05-18', 'hours' => 8, 'description' => 'Userstory'],
+    ['user' => 'daria', 'date' => '2024-05-19', 'hours' => 6, 'description' => 'Project A'],
+    ['user' => 'jan',   'date' => '2024-05-18', 'hours' => 9, 'description' => 'Userstory 2'],
 ];
 
 $username = $_SESSION['username'];
