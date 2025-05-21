@@ -3,9 +3,9 @@ session_start();
 
 // Simulated "mini database" of users
 $users = [
-    'alice' => ['password' => '1234', 'role' => 'worker'],
-    'charlie' => ['password' => '5678', 'role' => 'worker'],
-    'bob'   => ['password' => 'admin', 'role' => 'department_head'],
+    'daria' => ['password' => '1234', 'role' => 'medewerker'],
+    'jan' => ['password' => '5678', 'role' => 'medewerker'],
+    'raymond'   => ['password' => 'admin', 'role' => 'afdelingshoofd'],
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: dashboard.php");
         exit();
     } else {
-        $error = "Onjuiste gebruikersnaam of wachtwoord!";
+        $error = "Onjuiste gebruikersnaam of wachtwoord.";
     }
 }
 ?>
@@ -46,9 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit">Inloggen</button>
     </form>
 
-    <div class="ButtonBack"> 
-  <a href="opdrachten.html" target="_self" ><button>Terug</button></a>
-    </div>
+    
 
 </body>
 </html>

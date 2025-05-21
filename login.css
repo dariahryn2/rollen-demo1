@@ -11,12 +11,6 @@ body {
 }
 
 
-.ButtonBack button {
-margin-top: 10%;
-background-color: rgb(17, 0, 255);
-}
-
-/* Formuliercontainer */
 form {
     background-color: #fff;
     padding: 20px;
@@ -27,22 +21,19 @@ form {
     box-sizing: border-box;
 }
 
-/* Stijlen voor de titels */
 h2, h1 {
     text-align: center;
     color: #333;
     margin-bottom: 20px; 
 }
 
-/* Stijlen voor de labels */
 label {
-    display: block; /* Zorgt ervoor dat de labels boven de invoervelden komen */
+    display: block;
     margin: 10px 0 5px;
     font-weight: bold;
     color: #333;
 }
 
-/* Stijlen voor de invoervelden */
 input[type="text"], input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -52,7 +43,6 @@ input[type="text"], input[type="password"] {
     box-sizing: border-box;
 }
 
-/* Knopstijl */
 button {
     width: 100%;
     padding: 10px;
@@ -73,14 +63,12 @@ button:hover {
     color: white;
 }
 
-/* Foutmelding styling */
 .error {
     color: red;
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Responsive stijlen */
 @media (max-width: 768px) {
    
     form {

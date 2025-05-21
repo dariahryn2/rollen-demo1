@@ -7,15 +7,15 @@ if (!isset($_SESSION['loggedin'])) {
 }
 
 $worked_hours = [
-    ['user' => 'alice', 'date' => '2024-05-01', 'hours' => 8, 'description' => 'Kantoorwerk'],
-    ['user' => 'alice', 'date' => '2024-05-02', 'hours' => 6, 'description' => 'Project X'],
-    ['user' => 'bob',   'date' => '2024-05-01', 'hours' => 9, 'description' => 'Overzicht en toezicht'],
+    ['user' => 'daria', 'date' => '2024-05-01', 'hours' => 8, 'description' => 'Userstory'],
+    ['user' => 'daria', 'date' => '2024-05-02', 'hours' => 6, 'description' => 'Project A'],
+    ['user' => 'jan',   'date' => '2024-05-01', 'hours' => 9, 'description' => 'Userstory 2'],
 ];
 
 $username = $_SESSION['username'];
 $role = $_SESSION['role'];
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && $role === 'worker') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && $role === 'medewerker') {
     // Save new work hours into session (simulation)
     $new_entry = [
         'user' => $username,
@@ -38,6 +38,7 @@ if (isset($_SESSION['logged_hours'])) {
     $all_hours = array_merge($all_hours, $_SESSION['logged_hours']);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -48,7 +49,7 @@ if (isset($_SESSION['logged_hours'])) {
 <body>
     <h2>Welkom, <?= htmlspecialchars($username) ?>!</h2>
     
-    <?php if ($role === 'worker'): ?>
+    <?php if ($role === 'medewerker'): ?>
         <p>Je kunt hier je gewerkte uren registreren:</p>
         <form method="post">
             <label>Datum: <input type="date" name="date" required></label><br><br>
@@ -69,7 +70,7 @@ if (isset($_SESSION['logged_hours'])) {
             <th>Beschrijving</th>
         </tr>
         <?php foreach ($all_hours as $entry): ?>
-            <?php if ($role === 'department_head' || $entry['user'] === $username): ?>
+            <?php if ($role === 'afdelingshoofd' || $entry['user'] === $username): ?>
                 <tr>
                     <td><?= htmlspecialchars($entry['user']) ?></td>
                     <td><?= htmlspecialchars($entry['date']) ?></td>
@@ -79,5 +80,6 @@ if (isset($_SESSION['logged_hours'])) {
             <?php endif; ?>
         <?php endforeach; ?>
     </table>
+
 </body>
 </html>
